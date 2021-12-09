@@ -15,8 +15,8 @@ import { DataProvider } from "./shared/DataProvider";
 const title = "Golden Team";
 
 const routes = [
-	{ label: "🏠 Home", path: "/home", component: Home },
-	{ label: "🧪 Example", path: "/example", component: Example },
+	{ label: " Home", path: "/home", component: Home },
+	{ label: " Example", path: "/example", component: Example },
 ];
 
 function App() {
