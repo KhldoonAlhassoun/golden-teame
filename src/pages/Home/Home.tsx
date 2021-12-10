@@ -17,9 +17,8 @@ export const Home = () => {
 
 			<h2>We can place the lamp-button here</h2>
 			<Spacer size={16} />
-			<p>button button button button button</p>
 			<Button
-				label="Send!"
+				label="Turn on the speacking lamp!"
 				onClick={async () => {
 					const result = await addTeamEvent(selected);
 					const timestamp = result?.data?.addTeamEvent.timestamp;
