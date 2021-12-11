@@ -23,9 +23,9 @@ export const Button = (props: ButtonProps) => {
 			onClick={onClick}
 		>
 			<span className={styles.text}>{text} </span>
-			<span>
+			{/* <span>
 				<FcIdea style={iconStyle} />
-			</span>
+			</span> */}
 		</div>
 	);
 };

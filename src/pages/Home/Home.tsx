@@ -1,22 +1,21 @@
 import React, { useState } from "react";
 import { useAddTeamEvent } from "../../shared/api";
-import { emotions } from "../../shared/types";
+import { votes } from "../../shared/types";
 import { Button } from "../../ui-lib/Button/Button";
+import MultiActionAreaCard from "../../ui-lib/Card/Card";
 import { Spacer } from "../../ui-lib/Spacer/Spacer";
+import { StatusForm } from "../Example/StatusForm/StatusForm";
 
 export const Home = () => {
 	const addTeamEvent = useAddTeamEvent();
-	const [selected, setSelected] = useState(emotions[0].id);
+	const [selected, setSelected] = useState(votes[0].id);
 	return (
 		<>
-			<h1>Welcome to the golden team app!</h1>
-			<Spacer size={32} />
-			<p>Here we can add windows</p>
+			<h2>Welcome to the golden team app!</h2>
 
-			<Spacer size={48} />
-
-			<h2>We can place the lamp-button here</h2>
-			<Spacer size={16} />
+			<Spacer size={30} />
+			<MultiActionAreaCard />
+			<Spacer size={100} />
 			<Button
 				label="Turn on the speacking lamp!"
 				onClick={async () => {
@@ -26,12 +25,9 @@ export const Home = () => {
 					console.log(`event ${selected} triggered at ${timestamp}`);
 				}}
 			/>
-			<Spacer size={16} />
 
-			<Spacer size={48} />
-
-			<h2>The voting section</h2>
 			<Spacer size={16} />
+			<StatusForm />
 		</>
 	);
 };

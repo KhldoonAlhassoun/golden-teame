@@ -1,19 +1,19 @@
-export interface Emotion {
-  id: string;
-  emoji: string;
+export interface Vote {
+	id: string;
+	emoji: string;
 }
 
-export const emotions: Emotion[] = [
-  { id: "emotion-1", emoji: "😍" },
-  { id: "emotion-2", emoji: "🤡" },
-  { id: "emotion-3", emoji: "🥴" },
+export const votes: Vote[] = [
+	{ id: "vote-1", emoji: "🎉" },
+	{ id: "vote-2", emoji: "😃" },
+	{ id: "vote-3", emoji: "☕" },
 ];
 
 export interface TeamState {
-  state: { key: string; value: string }[];
+	state: { key: string; value: string }[];
 }
 
 export interface TeamEventMean {
-  type: string;
-  value: number;
+	type: string;
+	value: number;
 }
