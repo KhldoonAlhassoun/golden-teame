@@ -1,0 +1,16 @@
+.PictureContainer {
+	display: inline-flex;
+	flex-direction: row;
+	align-items: center;
+	width: 400;
+    height: 100;
+	margin: 5;
+
+}
+.home {
+background-color: #2E4253;
+}
+
+.font {
+color: black;
+}
