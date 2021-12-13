@@ -6,8 +6,14 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { useAddTeamEvent } from "../../shared/api";
+import { useState } from "react";
+import IconButton from "@mui/material/IconButton";
+import LightbulbIcon from "@mui/icons-material";
+import LightbulbOutlinedIcon from "@mui/icons-material";
 
 export default function MultiActionAreaCard() {
+	const [buttonToggle, setButtonToggle] = useState(false);
+	const [buttonIcon, setButtonIcon] = useState();
 	const addTeamEvent = useAddTeamEvent();
 	return (
 		<Card sx={{ width: 230, border: 3, borderColor: "white" }}>
@@ -30,18 +36,39 @@ export default function MultiActionAreaCard() {
 				</CardContent>
 			</CardActionArea>
 			<CardActions>
-				<Button
+				<IconButton
+					aria-label="lamp"
+					size="large"
 					color="primary"
-					startIcon="💡"
 					onClick={async () => {
-						const result = await addTeamEvent("lampButton", "on");
-						const timestamp = result?.data?.addTeamEvent.timestamp;
+						if (buttonToggle == false) {
+							const result = await addTeamEvent(
+								"lampButton",
+								"1"
+							);
+							const timestamp =
+								result?.data?.addTeamEvent.timestamp;
 
-						console.log(
-							`event ${"lampButton"} triggered at ${timestamp}`
-						);
+							console.log(
+								`event ${"lampButton"} triggered at ${timestamp}`
+							);
+						} else {
+							const result = await addTeamEvent(
+								"lampButton",
+								"0"
+							);
+							const timestamp =
+								result?.data?.addTeamEvent.timestamp;
+
+							console.log(
+								`event ${"lampButton"} triggered at ${timestamp}`
+							);
+						}
+						setButtonToggle(!buttonToggle);
 					}}
-				></Button>
+				>
+					<LightbulbIcon />
+				</IconButton>
 			</CardActions>
 		</Card>
 	);
