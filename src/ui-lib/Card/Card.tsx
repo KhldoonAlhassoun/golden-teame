@@ -8,8 +8,8 @@ import { Button, CardActionArea, CardActions } from "@mui/material";
 import { useAddTeamEvent } from "../../shared/api";
 import { useState } from "react";
 import IconButton from "@mui/material/IconButton";
-import LightbulbIcon from "@mui/icons-material";
-import LightbulbOutlinedIcon from "@mui/icons-material";
+import LightbulbIcon from "@mui/icons-material/Lightbulb";
+import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
 
 export default function MultiActionAreaCard() {
 	const [buttonToggle, setButtonToggle] = useState(false);
@@ -39,7 +39,7 @@ export default function MultiActionAreaCard() {
 				<IconButton
 					aria-label="lamp"
 					size="large"
-					color="primary"
+					sx={{ color: "#f0bb41" }}
 					onClick={async () => {
 						if (buttonToggle == false) {
 							const result = await addTeamEvent(
@@ -67,7 +67,7 @@ export default function MultiActionAreaCard() {
 						setButtonToggle(!buttonToggle);
 					}}
 				>
-					<LightbulbIcon />
+					<LightbulbOutlinedIcon />
 				</IconButton>
 			</CardActions>
 		</Card>
