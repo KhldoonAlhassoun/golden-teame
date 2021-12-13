@@ -6,7 +6,6 @@
 	padding: 0 32px;
 	border-radius: 4px;
 	background: var(--color-primary-medium);
-	background-color: white;
 }
 
 .container:hover {

@@ -3,14 +3,19 @@
 	flex-direction: row;
 	align-items: center;
 	width: 400;
-    height: 100;
+	height: 100;
 	margin: 5;
-
 }
-.home {
+/* .home {
 background-color: #2E4253;
-}
+} */
 
 .font {
-color: black;
+	color: black;
+}
+.pageTitle {
+	color: var(--color-grey-ultra-dark);
+}
+.cardBorder {
+	border-color: green;
 }
