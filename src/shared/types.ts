@@ -4,9 +4,9 @@ export interface Vote {
 }
 
 export const votes: Vote[] = [
-	{ id: "vote-1", emoji: "🎉" },
-	{ id: "vote-2", emoji: "😃" },
-	{ id: "vote-3", emoji: "☕" },
+	{ id: "vote-celebrate", emoji: "🎉" },
+	{ id: "vote-happy", emoji: "😃" },
+	{ id: "vote-Coffee", emoji: "☕" },
 ];
 
 export interface TeamState {

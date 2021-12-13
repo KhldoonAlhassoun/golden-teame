@@ -50,17 +50,6 @@ export const Home = () => {
 
 				<StatusForm />
 				<Spacer size={20} />
-				<Button
-					label="Turn on the speacking lamp!"
-					onClick={async () => {
-						const result = await addTeamEvent(selected);
-						const timestamp = result?.data?.addTeamEvent.timestamp;
-
-						console.log(
-							`event ${selected} triggered at ${timestamp}`
-						);
-					}}
-				/>
 			</div>
 		</>
 	);

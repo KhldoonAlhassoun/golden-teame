@@ -23,7 +23,7 @@ export const StatusForm = () => {
 				<Button
 					label="Vote!"
 					onClick={async () => {
-						const result = await addTeamEvent(selected);
+						const result = await addTeamEvent(selected, selected);
 						const timestamp = result?.data?.addTeamEvent.timestamp;
 
 						console.log(

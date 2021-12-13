@@ -1,7 +1,7 @@
 import { gql, useMutation, useQuery, useSubscription } from "@apollo/client";
 import { TeamEventMean, TeamState } from "./types";
 
-const TEAM_ID = "GoldenTeam"; // Change this to your own team id
+const TEAM_ID = "goldenTeam"; // Change this to your own team id
 
 // Query example
 const teamEventMeanQuery = gql`
@@ -26,8 +26,11 @@ export const useTeamEventMean = () => {
 
 // Mutation example
 const addTeamEventMutation = gql`
-	mutation AddTeamEvent($input: TeamEventInput) {
+	mutation Mutation($input: TeamEventInput) {
 		addTeamEvent(input: $input) {
+			team
+			type
+			data
 			timestamp
 		}
 	}
@@ -38,12 +41,13 @@ export const useAddTeamEvent = () => {
 			addTeamEventMutation
 		);
 
-	return (eventType: string) =>
+	return (eventType: string, mutationData: string) =>
 		addTeamEvent({
 			variables: {
 				input: {
 					team: TEAM_ID,
 					type: eventType,
+					data: mutationData,
 				},
 			},
 		});

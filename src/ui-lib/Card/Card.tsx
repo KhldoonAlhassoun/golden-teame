@@ -5,8 +5,10 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
+import { useAddTeamEvent } from "../../shared/api";
 
 export default function MultiActionAreaCard() {
+	const addTeamEvent = useAddTeamEvent();
 	return (
 		<Card sx={{ width: 230, border: 3, borderColor: "white" }}>
 			<CardActionArea>
@@ -28,7 +30,18 @@ export default function MultiActionAreaCard() {
 				</CardContent>
 			</CardActionArea>
 			<CardActions>
-				<Button color="primary" startIcon="💡"></Button>
+				<Button
+					color="primary"
+					startIcon="💡"
+					onClick={async () => {
+						const result = await addTeamEvent("lampButton", "on");
+						const timestamp = result?.data?.addTeamEvent.timestamp;
+
+						console.log(
+							`event ${"lampButton"} triggered at ${timestamp}`
+						);
+					}}
+				></Button>
 			</CardActions>
 		</Card>
 	);
