@@ -7,7 +7,7 @@ import { StatusItem } from "./StatusItem";
 export const Status = () => {
 	return (
 		<div className={styles.container}>
-			<h2>Current team spirit</h2>
+			<h3>Current team spirit</h3>
 			<Spacer size={32} />
 			<div className={styles.content}>
 				{votes.map((vote) => (

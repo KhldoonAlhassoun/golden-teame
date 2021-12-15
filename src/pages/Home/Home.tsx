@@ -8,6 +8,7 @@ import MultiActionAreaCard from "../../ui-lib/Card/Card";
 import { Spacer } from "../../ui-lib/Spacer/Spacer";
 import { StatusForm } from "../Example/StatusForm/StatusForm";
 import Grid from "@mui/material/Grid";
+import { Status } from "../Example/Status/Status";
 
 export const Home = () => {
 	const addTeamEvent = useAddTeamEvent();
@@ -23,33 +24,36 @@ export const Home = () => {
 				</div>
 
 				<Spacer size={20} />
-				<div className={styles.PictureContainer}>
-					<Grid container spacing={1.8}>
-						<Grid item xs={4}>
-							<MultiActionAreaCard />
-						</Grid>
-						<Grid item xs={4}>
-							<MultiActionAreaCard />
-						</Grid>
-						<Grid item xs={4}>
-							<div className={styles.cardBorder}>
+				<div>
+					<div className={styles.PictureContainer}>
+						<Grid container spacing={1.8}>
+							<Grid item xs={4}>
 								<MultiActionAreaCard />
-							</div>
+							</Grid>
+							<Grid item xs={4}>
+								<MultiActionAreaCard />
+							</Grid>
+							<Grid item xs={4}>
+								<div className={styles.cardBorder}>
+									<MultiActionAreaCard />
+								</div>
+							</Grid>
+							<Grid item xs={4}>
+								<MultiActionAreaCard />
+							</Grid>
+							<Grid item xs={4}>
+								<MultiActionAreaCard />
+							</Grid>
+							<Grid item xs={4}>
+								<MultiActionAreaCard />
+							</Grid>
 						</Grid>
-						<Grid item xs={4}>
-							<MultiActionAreaCard />
-						</Grid>
-						<Grid item xs={4}>
-							<MultiActionAreaCard />
-						</Grid>
-						<Grid item xs={4}>
-							<MultiActionAreaCard />
-						</Grid>
-					</Grid>
-				</div>
+					</div>
 
-				<StatusForm />
+					<StatusForm />
+				</div>
 				<Spacer size={20} />
+				<Status />
 			</div>
 		</>
 	);

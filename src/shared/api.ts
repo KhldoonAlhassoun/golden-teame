@@ -2,6 +2,7 @@ import { gql, useMutation, useQuery, useSubscription } from "@apollo/client";
 import { TeamEventMean, TeamState } from "./types";
 
 const TEAM_ID = "goldenTeam"; // Change this to your own team id
+const EMOTION_ID = "goldenTeam_emotions";
 
 // Query example
 const teamEventMeanQuery = gql`
@@ -16,7 +17,7 @@ export const useTeamEventMean = () => {
 	const { data } = useQuery<{ teamEventMean: TeamEventMean[] }>(
 		teamEventMeanQuery,
 		{
-			variables: { team: TEAM_ID },
+			variables: { team: EMOTION_ID },
 			pollInterval: 1000,
 		}
 	);
@@ -41,11 +42,11 @@ export const useAddTeamEvent = () => {
 			addTeamEventMutation
 		);
 
-	return (eventType: string, mutationData: string) =>
+	return (eventType: string, mutationData: string, tabelId: string) =>
 		addTeamEvent({
 			variables: {
 				input: {
-					team: TEAM_ID,
+					team: tabelId,
 					type: eventType,
 					data: mutationData,
 				},

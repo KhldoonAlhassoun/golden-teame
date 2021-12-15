@@ -10,6 +10,7 @@ import { useState } from "react";
 import IconButton from "@mui/material/IconButton";
 import LightbulbIcon from "@mui/icons-material/Lightbulb";
 import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
+const TEAM_ID = "goldenTeam";
 
 export default function MultiActionAreaCard() {
 	const [buttonToggle, setButtonToggle] = useState(false);
@@ -18,24 +19,6 @@ export default function MultiActionAreaCard() {
 	return (
 		<Card sx={{ width: 230, border: 3, borderColor: "white" }}>
 			<CardActionArea>
-				<CardMedia
-					className={styles.media}
-					component="img"
-					height="200"
-					image="https://i.pinimg.com/564x/97/2d/82/972d82315bd383f68c13339161832799.jpg"
-					alt="Person"
-				/>
-				<CardContent>
-					<Typography
-						className={styles.cardTitle}
-						variant="h5"
-						component="div"
-					>
-						Maya
-					</Typography>
-				</CardContent>
-			</CardActionArea>
-			<CardActions>
 				<IconButton
 					aria-label="lamp"
 					size="large"
@@ -45,7 +28,8 @@ export default function MultiActionAreaCard() {
 						if (buttonToggle == false) {
 							const result = await addTeamEvent(
 								"lampButton",
-								"1"
+								"1",
+								TEAM_ID
 							);
 							const timestamp =
 								result?.data?.addTeamEvent.timestamp;
@@ -56,7 +40,8 @@ export default function MultiActionAreaCard() {
 						} else {
 							const result = await addTeamEvent(
 								"lampButton",
-								"0"
+								"0",
+								TEAM_ID
 							);
 							const timestamp =
 								result?.data?.addTeamEvent.timestamp;
@@ -69,7 +54,24 @@ export default function MultiActionAreaCard() {
 				>
 					<LightbulbOutlinedIcon />
 				</IconButton>
-			</CardActions>
+				<CardMedia
+					className={styles.media}
+					component="img"
+					height="200"
+					image="https://i.pinimg.com/564x/97/2d/82/972d82315bd383f68c13339161832799.jpg"
+					alt="Person"
+				></CardMedia>
+				<CardContent>
+					<Typography
+						className={styles.cardTitle}
+						variant="h5"
+						component="div"
+					>
+						Maya
+					</Typography>
+				</CardContent>
+			</CardActionArea>
+			<CardActions></CardActions>
 		</Card>
 	);
 }

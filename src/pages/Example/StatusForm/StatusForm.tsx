@@ -6,6 +6,8 @@ import { useAddTeamEvent } from "../../../shared/api";
 import { votes } from "../../../shared/types";
 import styles from "./StatusForm.module.css";
 
+const EMOTION_ID = "goldenTeam_emotions";
+
 export const StatusForm = () => {
 	const addTeamEvent = useAddTeamEvent();
 	const [selected, setSelected] = useState(votes[0].id);
@@ -23,7 +25,11 @@ export const StatusForm = () => {
 				<Button
 					label="Vote!"
 					onClick={async () => {
-						const result = await addTeamEvent(selected, selected);
+						const result = await addTeamEvent(
+							selected,
+							selected,
+							EMOTION_ID
+						);
 						const timestamp = result?.data?.addTeamEvent.timestamp;
 
 						console.log(
