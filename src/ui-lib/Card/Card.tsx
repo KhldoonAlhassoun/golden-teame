@@ -41,6 +41,7 @@ export default function MultiActionAreaCard() {
 					size="large"
 					sx={{ color: "#f0bb41" }}
 					onClick={async () => {
+						setButtonToggle(!buttonToggle);
 						if (buttonToggle == false) {
 							const result = await addTeamEvent(
 								"lampButton",
@@ -64,7 +65,6 @@ export default function MultiActionAreaCard() {
 								`event ${"lampButton"} triggered at ${timestamp}`
 							);
 						}
-						setButtonToggle(!buttonToggle);
 					}}
 				>
 					<LightbulbOutlinedIcon />
