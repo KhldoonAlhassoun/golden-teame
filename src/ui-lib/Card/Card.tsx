@@ -1,7 +1,7 @@
 import * as React from "react";
 import Card from "@mui/material/Card";
-import styles from "./Card.module.css";
 import CardContent from "@mui/material/CardContent";
+//import styles from "./Card.module.css";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
@@ -12,7 +12,65 @@ import LightbulbIcon from "@mui/icons-material/Lightbulb";
 import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
 const TEAM_ID = "goldenTeam";
 
-export default function MultiActionAreaCard() {
+function Dummy_tar_bort_fel() {
+	// denna funktion används inte
+	// detta tar bort fel i editorn - vet inte varför
+	<Lamp />
+}
+
+function Lamp() {
+	const [buttonToggle, setButtonToggle] = useState(false);
+	const [buttonIcon, setButtonIcon] = useState();
+	const addTeamEvent = useAddTeamEvent();
+	return (
+		<IconButton
+			aria-label="lamp"
+			size="large"
+			sx={{ color: "#f0bb41" }}
+			onClick={async () => {
+				setButtonToggle(!buttonToggle);
+				console.log(`event ${"lampButton"} triggered`);
+				if (buttonToggle == false) {
+					const result = await addTeamEvent(
+						"lampButton",
+						"1",
+						TEAM_ID
+					);
+					const timestamp = result?.data?.addTeamEvent.timestamp;
+					console.log(`event ${"lampButton"} triggered at ${timestamp}`);
+				} else {
+					const result = await addTeamEvent(
+						"lampButton",
+						"0",
+						TEAM_ID
+					);
+					const timestamp = result?.data?.addTeamEvent.timestamp;
+					console.log(`event ${"lampButton"} triggered at ${timestamp}`);
+				}
+			}}
+		>
+			<LightbulbOutlinedIcon />
+		</IconButton>
+	);
+}
+
+function Person(props: { name: any; img: any; }) {
+	//console.log(props.name,props.img);
+	return (
+		<Card sx={{ position: 'relative', width: 200, borderRadius: 5 }}>
+			<CardMedia component="img" height="150" image={props.img} />
+			<CardActionArea sx={{ position: 'absolute', top: 5, left: 5 }}>
+				<Lamp />
+			</CardActionArea>
+			<CardContent sx={{ position: 'absolute', bottom: -25, left: 0 }}>
+				<Typography variant="h5" component="div" color="white">{props.name}</Typography>
+			</CardContent>
+		</Card> 
+	);
+}
+
+/*
+function PersonOld() {
 	const [buttonToggle, setButtonToggle] = useState(false);
 	const [buttonIcon, setButtonIcon] = useState();
 	const addTeamEvent = useAddTeamEvent();
@@ -75,3 +133,6 @@ export default function MultiActionAreaCard() {
 		</Card>
 	);
 }
+*/
+
+export default Person
