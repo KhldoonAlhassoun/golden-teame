@@ -14,7 +14,6 @@ export const StatusForm = () => {
 
 	return (
 		<div className={styles.container}>
-			<h4 className={styles.formTitle}>Send vote to team</h4>
 			<div className={styles.voteButtonContainer}>
 				<EmojiPicker
 					items={votes}
