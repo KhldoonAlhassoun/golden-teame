@@ -25,8 +25,8 @@ function Lamp() {
 	return (
 		<IconButton
 			aria-label="lamp"
-			size="large"
-			sx={{ color: "#f0bb41" }}
+			size="small"
+			sx={{ color: "black", backgroundColor: 'white', }}
 			onClick={async () => {
 				setButtonToggle(!buttonToggle);
 				console.log(`event ${"lampButton"} triggered`);
