@@ -19,14 +19,14 @@ export const Home = () => {
 				<div className={styles.font}>
 					{" "}
 					<h2 className={styles.pageTitle}>
-						Welcome to the golden team app!
+						{/* Welcome to the golden team app! */}
 					</h2>{" "}
-				</div>
+				</div> 
 
 				<Spacer size={20} />
 				<div>
 					<div className={styles.PictureContainer}>
-						<Grid container spacing={1.8}>
+						<Grid container spacing={1}>
 							<Grid item >
 								<Person name='Anna' img='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCKegkuagnSD07i9Sjawm5qCIqF0P5cfQEPA&usqp=CAU' />
 							</Grid>
@@ -50,8 +50,11 @@ export const Home = () => {
 
 					<StatusForm />
 				</div>
-				<Spacer size={20} />
-				<Status />
+				<div className={styles.StatCon}>
+					<Spacer size={20} />
+					<Status />
+					</div>
+				
 			</div>
 		</>
 	);

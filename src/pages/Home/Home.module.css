@@ -2,9 +2,9 @@
 	display: inline-flex;
 	flex-direction: row;
 	align-items: center;
-	width: 400;
+	width: 250;
 	height: 100;
-	margin: 5;
+	margin: 0;
 }
 /* .home {
 background-color: #2E4253;
@@ -19,3 +19,7 @@ background-color: #2E4253;
 .cardBorder {
 	border-color: green;
 }
+
+/*.StatCon {
+background-color: #61798D;
+}*/

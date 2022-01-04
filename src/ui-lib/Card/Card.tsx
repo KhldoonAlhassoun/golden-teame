@@ -57,7 +57,7 @@ function Lamp() {
 function Person(props: { name: any; img: any; }) {
 	//console.log(props.name,props.img);
 	return (
-		<Card sx={{ position: 'relative', width: 200, borderRadius: 5 }}>
+		<Card sx={{ position: 'relative', width: 240, borderRadius: 5 }}>
 			<CardMedia component="img" height="150" image={props.img} />
 			<CardActionArea sx={{ position: 'absolute', top: 5, left: 5 }}>
 				<Lamp />
