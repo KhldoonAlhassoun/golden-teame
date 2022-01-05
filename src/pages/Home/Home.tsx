@@ -27,27 +27,46 @@ export const Home = () => {
 				<div>
 					<div className={styles.PictureContainer}>
 						<Grid container spacing={1.8}>
-							<Grid item >
-								<Person name='Anna' img='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCKegkuagnSD07i9Sjawm5qCIqF0P5cfQEPA&usqp=CAU' />
+							<Grid item>
+								<Person
+									name="Anna"
+									img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCKegkuagnSD07i9Sjawm5qCIqF0P5cfQEPA&usqp=CAU"
+								/>
 							</Grid>
-							<Grid item >
-								<Person name='Jocke' img='images/person2.jfif' />
+							<Grid item>
+								<Person
+									name="Jocke"
+									img="images/person2.jfif"
+								/>
 							</Grid>
-							<Grid item >
-								<Person name='Pia' img='https://i1.sndcdn.com/avatars-6H5MKgzDgzDNhDUW-L2oatw-t500x500.jpg' />
+							<Grid item>
+								<Person
+									name="Pia"
+									img="https://i1.sndcdn.com/avatars-6H5MKgzDgzDNhDUW-L2oatw-t500x500.jpg"
+								/>
 							</Grid>
-							<Grid item >
-								<Person name='Hanna' img='images/person1.jfif' />
+							<Grid item>
+								<Person
+									name="Hanna"
+									img="images/person1.jfif"
+								/>
 							</Grid>
-							<Grid item >
-								<Person name='Stefan' img='images/stefan.jfif' />
+							<Grid item>
+								<Person
+									name="Stefan"
+									img="images/stefan.jfif"
+								/>
 							</Grid>
-							<Grid item >
-								<Person name='Donald' img='images/donald.jfif' />
+							<Grid item>
+								<Person
+									name="Donald"
+									img="images/donald.jfif"
+								/>
 							</Grid>
 						</Grid>
 					</div>
 
+					<Spacer size={20} />
 					<StatusForm />
 				</div>
 				<Spacer size={20} />
