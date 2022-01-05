@@ -14,10 +14,7 @@ import { DataProvider } from "./shared/DataProvider";
 
 const title = "Golden Team App";
 
-const routes = [
-	{ label: " Demo", path: "/home", component: Home },
-	{ label: " Example", path: "/example", component: Example },
-];
+const routes = [{ label: " Home", path: "/home", component: Home }];
 
 function App() {
 	return (
@@ -25,7 +22,7 @@ function App() {
 			<Router>
 				<div className={styles.container}>
 					<div className={styles.content}>
-						<Header title={title}  routes={routes} />
+						<Header title={title} routes={routes} />
 						<Divider />
 						<div className={styles.pageContent}>
 							<Routes />

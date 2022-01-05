@@ -8,7 +8,6 @@ export const Status = () => {
 	return (
 		<div className={styles.container}>
 			<h3>Current Team Spirit</h3>
-			<Spacer size={32} />
 			<div className={styles.content}>
 				{votes.map((vote) => (
 					<StatusItem key={vote.id} vote={vote} />
