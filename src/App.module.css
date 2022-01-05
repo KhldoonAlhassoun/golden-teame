@@ -16,6 +16,9 @@
 	min-height: 100%;
 	background: var(--color-white);
 }
+.content title {
+	color: white;
+}
 
 .pageContent {
 	padding: 20px 96px 120px 120px;

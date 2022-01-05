@@ -19,7 +19,7 @@ export const Home = () => {
 				<div className={styles.font}>
 					{" "}
 					<h2 className={styles.pageTitle}>
-						Welcome to the golden team app!
+						{/* Welcome to the golden team app! */}
 					</h2>{" "}
 				</div>
 
@@ -69,8 +69,10 @@ export const Home = () => {
 					<Spacer size={20} />
 					<StatusForm />
 				</div>
-				<Spacer size={20} />
-				<Status />
+				<div className={styles.StatCon}>
+					<Spacer size={20} />
+					<Status />
+				</div>
 			</div>
 		</>
 	);

@@ -21,7 +21,7 @@ body {
 	margin: 0;
 }
 body {
-	background: var(--color-grey-light);
+	background: #61798D;
 	font-family: var(--font-family-base);
 	color: var(--color-grey-ultra-dark);
 }
@@ -46,7 +46,7 @@ h2 {
 	line-height: 120%;
 	font-weight: 700;
 	margin: 0;
-	color:black
+	color:black;
 }
 
 h3 {
@@ -54,7 +54,7 @@ h3 {
 	line-height: 120%;
 	font-weight: 500;
 	margin: 0;
-	color:black
+
 }
 
 a,
